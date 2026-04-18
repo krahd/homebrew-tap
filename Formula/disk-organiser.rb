@@ -1,7 +1,7 @@
 class DiskOrganiser < Formula
   desc "Visualise and safely organise files on your hard drive"
   homepage "https://github.com/krahd/disk_organiser"
-  url "https://github.com/krahd/disk_organiser/releases/download/v0.1.1/#{MAC_TAR_NAME}"
+  url "https://github.com/krahd/disk_organiser/releases/download/v0.1.1/disk-organiser-v0.1.1-macos-installer.tar.gz"
   sha256 "74043a3d1652be9ac4464ca48bd9bc6b539bd8dbc3c9b80c69c58830a83ccae9"
   license "MIT"
 
@@ -11,7 +11,7 @@ class DiskOrganiser < Formula
     libexec.install Dir["*"]
     (bin/"disk-organiser").write <<~EOS
       #!/bin/bash
-      exec "/python3" "#{libexec}/backend/app.py" ""
+      exec "#{Formula[\"python@3.12\"].opt_bin}/python3" "#{libexec}/backend/app.py" "$@"
     EOS
     chmod 0755, bin/"disk-organiser"
   end
