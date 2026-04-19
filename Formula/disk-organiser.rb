@@ -15,7 +15,7 @@ class DiskOrganiser < Formula
 
   on_linux do
     url "https://github.com/krahd/disk_organiser/releases/download/v0.1.1/disk-organiser-v0.1.1-linux-installer.tar.gz"
-    sha256 "$(shasum -a 256 /tmp/disk-organiser-v0.1.1-linux-installer.tar.gz 2>/dev/null | awk '{print $1}')"
+    sha256 "74043a3d1652be9ac4464ca48bd9bc6b539bd8dbc3c9b80c69c58830a83ccae9"
   end
 
   depends_on "python@3.12" unless Hardware::CPU.arm?
