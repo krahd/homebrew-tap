@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  audit_build_test:
+    name: Audit, build, and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Update Homebrew
+        run: brew update
+
+      - name: Audit formula
+        run: brew audit --strict ./Formula/chatgpt-to-claude.rb
+
+      - name: Install formula from source
+        run: brew install --build-from-source ./Formula/chatgpt-to-claude.rb
+
+      - name: Run formula test
+        run: brew test --verbose chatgpt-to-claude
+
+      - name: Uninstall formula
+        if: always()
+        run: brew uninstall --force chatgpt-to-claude || true
