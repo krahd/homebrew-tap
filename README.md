@@ -1,6 +1,6 @@
 # homebrew-tap
 
-Shared Homebrew tap for krahd command-line tools.
+Shared Homebrew tap for @krahd command-line tools.
 
 ## Install
 
