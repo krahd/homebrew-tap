@@ -7,12 +7,11 @@ class ChatgptToClaude < Formula
   sha256 "45ecf0a5bee9050c81485b6a487d3fa977b96aae11bb00a8948dd3b4394c92a1"
   license "MIT"
 
-bottle do
-  root_url "https://github.com/krahd/homebrew-tap/releases/download/v0.0.2"
-  rebuild 1
-  sha256 cellar: :any_skip_relocation, arm64_tahoe: "c0e98832cdd5c31593e9db5370444c50a0ece5ee652c62ff9cb7e4aadb46bf35"
-end
-
+  bottle do
+    root_url "https://github.com/krahd/homebrew-tap/releases/download/v0.0.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "c0e98832cdd5c31593e9db5370444c50a0ece5ee652c62ff9cb7e4aadb46bf35"
+  end
 
   depends_on "python@3.11"
 
