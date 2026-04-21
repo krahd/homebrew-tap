@@ -5,7 +5,7 @@ class ChatgptToClaude < Formula
   homepage "https://github.com/krahd/chatgpt_to_claude"
   url "https://github.com/krahd/chatgpt_to_claude/archive/refs/tags/v0.0.2.tar.gz"
   sha256 "45ecf0a5bee9050c81485b6a487d3fa977b96aae11bb00a8948dd3b4394c92a1"
-b  license "MIT"
+  license "MIT"
 
 bottle do
   root_url "https://github.com/krahd/homebrew-tap/releases/download/v0.0.2"
