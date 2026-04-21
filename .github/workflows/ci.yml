@@ -17,10 +17,10 @@ jobs:
         run: brew update
 
       - name: Audit formula
-        run: brew audit --strict ./Formula/chatgpt-to-claude.rb
+        run: brew audit --strict chatgpt-to-claude
 
       - name: Install formula from source
-        run: brew install --build-from-source ./Formula/chatgpt-to-claude.rb
+        run: brew install --build-from-source chatgpt-to-claude
 
       - name: Run formula test
         run: brew test --verbose chatgpt-to-claude
