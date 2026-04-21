@@ -21,6 +21,6 @@ end
   end
 
   test do
-    assert_predicate bin/"chatgpt-to-claude", :exist?
+    assert_path_exists bin/"chatgpt-to-claude"
   end
 end
