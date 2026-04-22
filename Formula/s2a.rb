@@ -24,7 +24,7 @@ class S2a < Formula
     end
 
     if OS.linux? && !Hardware::CPU.intel?
-      odie "Homebrew installation is currently available only for Linux x86_64. Use the GitHub release archive instead."
+      odie "Homebrew installation available only for Linux x86_64; use the GitHub release." 
     end
 
     archive_name = if OS.mac?
