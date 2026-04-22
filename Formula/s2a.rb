@@ -19,13 +19,9 @@ class S2a < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.intel?
-      odie "Homebrew installation is not yet available for macOS Intel. Use the GitHub release archive instead."
-    end
+    odie "Homebrew not available for macOS Intel; use GitHub release." if OS.mac? && Hardware::CPU.intel?
 
-    if OS.linux? && !Hardware::CPU.intel?
-      odie "Homebrew available only for Linux x86_64; use GitHub release."
-    end
+    odie "Homebrew available only for Linux x86_64; use GitHub release." if OS.linux? && !Hardware::CPU.intel?
 
     archive_name = if OS.mac?
       "s2a-#{version}-macos-arm64.tar.gz"
