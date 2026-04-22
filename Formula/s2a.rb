@@ -1,20 +1,20 @@
 class S2a < Formula
   desc "Migrate Squarespace sites into Astro-ready static content"
   homepage "https://github.com/krahd/squarespace-to-astro"
-  version "0.5.2"
+  version "0.5.3"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/krahd/squarespace-to-astro/releases/download/v#{version}/s2a-#{version}-macos-arm64.tar.gz"
-      sha256 "7fcb3d9ef990bb1668a5714b9b0fa7f604d83137e8adba238a33de55c7d7b436"
+      sha256 "e8a6a542621a1d997dc949d046bff0f21d117516c0f0bd0d5b618fd690002f46"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/krahd/squarespace-to-astro/releases/download/v#{version}/s2a-#{version}-linux-x86_64.tar.gz"
-      sha256 "c893455e8aaba9c37c2208d12ac8dd7d8ba9cf8e8050eef8bcee4ffdbb884d66"
+      sha256 "fd478da98d67c2a84e82bb49f3b7eccd60821e40a469297258f08640b0ebe5c2"
     end
   end
 
