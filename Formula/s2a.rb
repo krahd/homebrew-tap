@@ -7,7 +7,11 @@ class S2a < Formula
   on_macos do
     on_arm do
       url "https://github.com/krahd/squarespace-to-astro/releases/download/v#{version}/s2a-#{version}-macos-arm64.tar.gz"
+<<<<<<< HEAD
       sha256 "20e99abefac511827b2e3912950e797ed37bbd91d7b67c7d16076cef24cea92e"
+=======
+      sha256 "4a24fde6cf3b588be56f4ed960a1d2e33e1ea0cb0c4ccd5c918c5cf2f1558cb3"
+>>>>>>> d907768 (homebrew: bump s2a to 0.5.4 and update checksums)
     end
   end
 
