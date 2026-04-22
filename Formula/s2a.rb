@@ -1,27 +1,31 @@
 class S2a < Formula
   desc "Migrate Squarespace sites into Astro-ready static content"
   homepage "https://github.com/krahd/squarespace-to-astro"
-  version "0.5.3"
+  version "0.5.4"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/krahd/squarespace-to-astro/releases/download/v#{version}/s2a-#{version}-macos-arm64.tar.gz"
-      sha256 "e8a6a542621a1d997dc949d046bff0f21d117516c0f0bd0d5b618fd690002f46"
+      sha256 "20e99abefac511827b2e3912950e797ed37bbd91d7b67c7d16076cef24cea92e"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/krahd/squarespace-to-astro/releases/download/v#{version}/s2a-#{version}-linux-x86_64.tar.gz"
-      sha256 "fd478da98d67c2a84e82bb49f3b7eccd60821e40a469297258f08640b0ebe5c2"
+      sha256 "0738e20310462baa30e547bbd9119400ff3d1e8d14ad66f3a72bdd8abb0ace09"
     end
   end
 
   def install
-    odie "Homebrew not available for macOS Intel; use GitHub release." if OS.mac? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.intel?
+      odie "Homebrew installation is not yet available for macOS Intel. Use the GitHub release archive instead."
+    end
 
-    odie "Homebrew available only for Linux x86_64; use GitHub release." if OS.linux? && !Hardware::CPU.intel?
+    if OS.linux? && !Hardware::CPU.intel?
+      odie "Homebrew installation is currently available only for Linux x86_64. Use the GitHub release archive instead."
+    end
 
     archive_name = if OS.mac?
       "s2a-#{version}-macos-arm64.tar.gz"
